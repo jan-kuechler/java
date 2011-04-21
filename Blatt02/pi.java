@@ -5,26 +5,26 @@
 
 import java.util.Scanner;
 
-public class Pi
+public class pi //! "pi" klein, wie der Dateiname
 {
   static double f(double x)
   {
-    return 4 / (1 + x^2)
+    return 4 / (1 + x*x); //! kein ^-Operator für Potenzen, Semikolon fehlt
   }
 
-  public void main(String[] args)
+  public static void main(String[] args) //! static fehlt
   {
-    System.out("n = ");
-    int n = (new Scanner(System.in)).nextInt;
+    System.out.print("n = "); //! Fehlender Funktionsaufruf
+    int n = (new Scanner(System.in)).nextInt(); //! Klammern fehlen
 
     double sum;
-    double h = 1 / n;
+    double h = (double)1 / n; //! int/int gibt int, das ist wohl nicht das gewünschte...
     sum = f(0) + f(1);
-    for int i = 1; i < n; i++
+    for (int i = 1; i < n; i++) //! Klammern fehlen
       sum += 2 * f(i * h);
     sum *= h / 2;
 
     System.out.println("result: " + sum);
-    System.out.println("error:  " + abs(sum - PI));
+    System.out.println("error:  " + Math.abs(sum - Math.PI)); //! Math.abs() und Math.PI
   }
 };
