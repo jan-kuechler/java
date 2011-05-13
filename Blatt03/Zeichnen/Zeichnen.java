@@ -6,7 +6,6 @@ import java.util.*;
 
 public class Zeichnen extends JFrame
 {
-	ButtonGroup selection;
 	DrawArea draw;
 
 	public Zeichnen()
@@ -20,12 +19,10 @@ public class Zeichnen extends JFrame
 		// Selection panel
 		JPanel pnSelect = new JPanel();
 
-		selection = new ButtonGroup();
+		ButtonGroup selection = new ButtonGroup();
 		JRadioButton rbLine = new JRadioButton("Strecke", true);
 		rbLine.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (draw == null)
-					JOptionPane.showMessageDialog(null, "Test", "Test Titel", JOptionPane.OK_CANCEL_OPTION);
 				draw.SetDrawType(GetSelectedDrawType(e.getActionCommand()));
 			};
 		});
